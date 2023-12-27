@@ -1,0 +1,26 @@
+﻿<Window x:Class="practice_Pogodina.AutorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practice_Pogodina"
+        mc:Ignorable="d"
+        Title="Вход" Height="250" Width="300" WindowStartupLocation="CenterScreen">
+    <StackPanel Style="{DynamicResource StackPanelStyle}">
+        <Separator Height="10" Background="Transparent"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Source="./Images/user.png" Width="25"/>
+            <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="LoginTxt" Text="Логин" Width="200" Height="35" GotFocus="LoginTxt_GotFocus"/>
+        </StackPanel>
+        <Separator Height="10" Background="Transparent"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Source="./Images/password.png" Width="25"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PasswordTxt" Password="Пароль" Width="200" Height="35" GotFocus="PasswordTxt_GotFocus"/>
+        </StackPanel>
+        <Separator Height="10" Background="Transparent"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="EnterBtn" Content="Войти" Click="EnterBtn_Click" Width="227" Height="35" IsDefault="True" HorizontalContentAlignment="Center"/>
+        <Separator Height="10" Background="Transparent"/>
+        <Label x:Name="labelTimeTxt" Visibility="Hidden" Height="37" Content="10" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+    </StackPanel>
+</Window>

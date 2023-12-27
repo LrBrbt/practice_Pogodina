@@ -1,0 +1,17 @@
+﻿<Window x:Class="practice_Pogodina.ValuesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practice_Pogodina"
+        mc:Ignorable="d"
+        Title="Ввод значений коэффициентов" Height="220" Width="300" WindowStartupLocation="CenterScreen">
+    <StackPanel Style="{DynamicResource StackPanelStyle}">
+        <Separator Height="10" Background="Transparent"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}" x:Name="ValueKTxt" Text="Введите значение k" Width="200" Height="30" GotFocus="TextBox_GotFocus"/>
+        <Separator Height="10" Background="Transparent"/>
+        <TextBox Style="{DynamicResource TextBoxStyle}"  x:Name="ValueBTxt" Text="Введите значение b" Width="200" Height="30" GotFocus="TextBox_GotFocus"/>
+        <Separator Height="10" Background="Transparent"/>
+        <Button Style="{DynamicResource ButtonStyle}" x:Name="AcceptValue" Content="ОК"  Width="200" Height="35" Click="AcceptValue_Click"/>
+    </StackPanel>
+</Window>

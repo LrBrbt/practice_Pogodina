@@ -1,0 +1,49 @@
+﻿<Window x:Class="practice_Pogodina.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practice_Pogodina"
+        mc:Ignorable="d"
+        Title="Построение графика" Height="400" Width="600" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid Style="{DynamicResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="352*"/>
+            <RowDefinition Height="69*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="GraphInfo" Content="График функции: " Grid.RowSpan="2" FontSize="15" FontWeight="Bold"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <Canvas Name="CanvasContainer" Background="Transparent" Width="500" Height="300" Margin="20" Grid.Row="1" ClipToBounds="True">
+                <Line Name="axisY" X1="250" Y1="0" X2="250" Y2="300" Stroke="Black" StrokeThickness="2"/>
+                <Line x:Name="axisX" X1="0" Y1="150" X2="500" Y2="150" Stroke="Black" StrokeThickness="2"/>
+                <TextBlock Canvas.Left="133" Canvas.Top="145" Text="-100" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="161" Canvas.Top="145" Text="-75" Style="{DynamicResource TextBlockStyle}" />
+                <TextBlock Canvas.Left="187" Canvas.Top="145" Text="-50" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="211" Canvas.Top="145" Text="-25" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="265" Canvas.Top="145" Text="25" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="290" Canvas.Top="145" Text="50" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="315" Canvas.Top="145" Text="75" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="340" Canvas.Top="145" Text="100" Style="{DynamicResource TextBlockStyle}"/>
+
+                <!-- Цифры по оси Y -->
+                <TextBlock Canvas.Top="38" Canvas.Left="245" Text="100" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="63" Canvas.Left="245" Text="75" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="88" Canvas.Left="245" Text="50" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="113" Canvas.Left="245" Text="25" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="163" Canvas.Left="243" Text="-25" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="188" Canvas.Left="243" Text="-50" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="213" Canvas.Left="243" Text="-75" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Top="238" Canvas.Left="243" Text="-100" Style="{DynamicResource TextBlockStyle}"/>
+                <TextBlock Canvas.Left="247" Canvas.Top="145" Text="0" Style="{DynamicResource TextBlockStyle}"/>
+            </Canvas>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="558">
+            <Button Style="{DynamicResource ButtonStyle}" x:Name="BuildGraphik" Content="Построить график" Grid.Row="1" Width="180" Height="50" Click="BuildGraphik_Click"/>
+            <Separator Width="10" Background="Transparent"/>
+            <Button Style="{DynamicResource ButtonStyle}" x:Name="ClearCanvas" Content="Очистить поле" Grid.Row="1" Width="150" Height="50" Click="ClearCanvas_Click"/>
+            <Separator Width="10" Background="Transparent"/>
+            <Button Style="{DynamicResource ButtonStyle}" x:Name="ChangeUserBtn" Content="Сменить пользователя" Click="ChangeUserBtn_Click" Width="207"/>
+        </StackPanel>
+    </Grid>
+</Window>
